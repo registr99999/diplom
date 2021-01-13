@@ -1,4 +1,7 @@
-import start from "./modules/start";
+'use strict';
+
+    import modalCallback from "./modules/modalCallback";
 
 
-start();
+    modalCallback();
+

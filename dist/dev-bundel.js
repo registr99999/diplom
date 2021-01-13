@@ -38,18 +38,18 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_start__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/start */ \"./src/modules/start.js\");\n\n(0,_modules_start__WEBPACK_IMPORTED_MODULE_0__.default)();\n\n//# sourceURL=webpack://diplom/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modalCallback__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modalCallback */ \"./src/modules/modalCallback.js\");\n\n\n\n(0,_modules_modalCallback__WEBPACK_IMPORTED_MODULE_0__.default)();\n\n//# sourceURL=webpack://diplom/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/modules/start.js":
-/*!******************************!*\
-  !*** ./src/modules/start.js ***!
-  \******************************/
+/***/ "./src/modules/modalCallback.js":
+/*!**************************************!*\
+  !*** ./src/modules/modalCallback.js ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n\n\nvar start = function start() {\n  alert('dct заработало!!');\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (start);\n\n//# sourceURL=webpack://diplom/./src/modules/start.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar modalCallback = function modalCallback() {\n  var modalOverlay = document.querySelector('.modal-overlay');\n  var callback = document.getElementById('callback');\n  var mobMenuBtn = document.querySelector('.callback-btn');\n  console.log(mobMenuBtn);\n  document.addEventListener('click', function (_ref) {\n    var target = _ref.target;\n\n    if (target.hasClass('.callback-btn') === mobMenuBtn) {\n      alert('попал прям в кнопку');\n    }\n\n    console.dir(target);\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalCallback);\n\n//# sourceURL=webpack://diplom/./src/modules/modalCallback.js?");
 
 /***/ }),
 
@@ -444,7 +444,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "69fede605fffceab1714"
+/******/ 		__webpack_require__.h = () => "84155cc7ce9abf93df53"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
