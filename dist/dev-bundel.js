@@ -49,7 +49,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar modalCallback = function modalCallback() {\n  var modalOverlay = document.querySelector('.modal-overlay');\n  var callback = document.getElementById('callback');\n  var mobMenuBtn = document.querySelector('.callback-btn');\n  console.log(mobMenuBtn);\n  document.addEventListener('click', function (_ref) {\n    var target = _ref.target;\n\n    if (target.hasClass('.callback-btn') === mobMenuBtn) {\n      alert('попал прям в кнопку');\n    }\n\n    console.dir(target);\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalCallback);\n\n//# sourceURL=webpack://diplom/./src/modules/modalCallback.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar modalCallback = function modalCallback() {\n  var modalOverlay = document.querySelector('.modal-overlay');\n  var callback = document.getElementById('callback');\n  document.addEventListener('click', function (_ref) {\n    var target = _ref.target;\n\n    if (target.classList.contains('callback-btn')) {\n      modalOverlay.style.display = 'block';\n      callback.style.display = 'block';\n    }\n\n    if (target.classList.contains('.modal-close')) {\n      modalOverlay.style.display = 'none';\n      callback.style.display = 'none';\n    }\n\n    console.log(target);\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalCallback);\n\n//# sourceURL=webpack://diplom/./src/modules/modalCallback.js?");
 
 /***/ }),
 
@@ -444,7 +444,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "84155cc7ce9abf93df53"
+/******/ 		__webpack_require__.h = () => "53cea6ce02f7505145ba"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
