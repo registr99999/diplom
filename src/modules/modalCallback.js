@@ -2,7 +2,7 @@ const modalCallback = () => {
     document.addEventListener('click', ({ target }) => {
         const modalOverlay = document.querySelector('.modal-overlay');
         const callback = document.getElementById('callback');
-        if (target.closest('.callback-btn')) {
+        if (target.closest('.callback-btn') || target.closest('.button-services') || target.closest('.fancyboxModal') ) {
             modalOverlay.style.cssText = 'display:block; opacity:1; transition: all .9s ease 3s;';
             callback.style.cssText = 'display:block; opacity:1; transform: scale(1) translate(-50%, 0) rotate(0deg); transition: all .9s ease 1s;';
         }
