@@ -60,7 +60,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar smoothScroll = function smoothScroll() {\n  document.querySelectorAll('a[href^=\"#\"').forEach(function (link) {\n    link.classList.add('scrollto');\n    link.addEventListener('click', function (e) {\n      e.preventDefault();\n      var href = this.getAttribute('href').substring(1);\n      var scrollTarget = document.getElementById(href);\n      var topOffset = document.querySelector('.scrollto').offsetHeight;\n      var elementPosition = scrollTarget.getBoundingClientRect().top;\n      var offsetPosition = elementPosition - topOffset;\n      window.scrollBy({\n        top: offsetPosition,\n        behavior: 'smooth'\n      });\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (smoothScroll);\n\n//# sourceURL=webpack://diplom/./src/modules/smoothScroll.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar smoothScroll = function smoothScroll() {\n  // arrow Up\n  var arrowUp = document.querySelector('.up');\n  var services = document.getElementById('services');\n  console.log(services.offsetHeight);\n  arrowUp.style.cssText = 'display: none;';\n  window.addEventListener('scroll', function () {\n    if (window.scrollY > services.offsetTop - 100) {\n      arrowUp.style.cssText = 'display: block;';\n    } else {\n      arrowUp.style.cssText = 'display: none;';\n    }\n  });\n\n  window.onscroll = function () {};\n\n  arrowUp.addEventListener('click', function () {\n    window.scrollTo({\n      top: 0,\n      behavior: 'smooth'\n    });\n  }); // smooth Scroll\n\n  document.querySelectorAll('a[href^=\"#\"').forEach(function (link) {\n    link.classList.add('scrollto');\n    link.addEventListener('click', function (e) {\n      e.preventDefault();\n      var href = this.getAttribute('href').substring(1);\n      var scrollTarget = document.getElementById(href);\n      var topOffset = document.querySelector('.scrollto').offsetHeight;\n      var elementPosition = scrollTarget.getBoundingClientRect().top;\n      var offsetPosition = elementPosition - topOffset;\n      window.scrollBy({\n        top: offsetPosition,\n        behavior: 'smooth'\n      });\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (smoothScroll);\n\n//# sourceURL=webpack://diplom/./src/modules/smoothScroll.js?");
 
 /***/ }),
 
@@ -455,7 +455,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "0a8850c90d5567c8c2b5"
+/******/ 		__webpack_require__.h = () => "1998be5092d33f98ac8d"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
