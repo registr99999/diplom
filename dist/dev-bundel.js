@@ -38,7 +38,7 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modalCallback__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modalCallback */ \"./src/modules/modalCallback.js\");\n/* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/smoothScroll */ \"./src/modules/smoothScroll.js\");\n\n\n\n\n(0,_modules_modalCallback__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_smoothScroll__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://diplom/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modalCallback__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modalCallback */ \"./src/modules/modalCallback.js\");\n/* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/smoothScroll */ \"./src/modules/smoothScroll.js\");\n/* harmony import */ var _modules_spoilers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/spoilers */ \"./src/modules/spoilers.js\");\n\n\n\n\n\n(0,_modules_modalCallback__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_smoothScroll__WEBPACK_IMPORTED_MODULE_1__.default)();\n(0,_modules_spoilers__WEBPACK_IMPORTED_MODULE_2__.default)();\n\n//# sourceURL=webpack://diplom/./src/index.js?");
 
 /***/ }),
 
@@ -61,6 +61,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar smoothScroll = function smoothScroll() {\n  // arrow Up\n  var arrowUp = document.querySelector('.up');\n  var services = document.getElementById('services');\n  console.log(services.offsetHeight);\n  arrowUp.style.cssText = 'display: none;';\n  window.addEventListener('scroll', function () {\n    if (window.scrollY > services.offsetTop - 100) {\n      arrowUp.style.cssText = 'display: block;';\n    } else {\n      arrowUp.style.cssText = 'display: none;';\n    }\n  });\n\n  window.onscroll = function () {};\n\n  arrowUp.addEventListener('click', function () {\n    window.scrollTo({\n      top: 0,\n      behavior: 'smooth'\n    });\n  }); // smooth Scroll\n\n  document.querySelectorAll('a[href^=\"#\"').forEach(function (link) {\n    link.classList.add('scrollto');\n    link.addEventListener('click', function (e) {\n      e.preventDefault();\n      var href = this.getAttribute('href').substring(1);\n      var scrollTarget = document.getElementById(href);\n      var topOffset = document.querySelector('.scrollto').offsetHeight;\n      var elementPosition = scrollTarget.getBoundingClientRect().top;\n      var offsetPosition = elementPosition - topOffset;\n      window.scrollBy({\n        top: offsetPosition,\n        behavior: 'smooth'\n      });\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (smoothScroll);\n\n//# sourceURL=webpack://diplom/./src/modules/smoothScroll.js?");
+
+/***/ }),
+
+/***/ "./src/modules/spoilers.js":
+/*!*********************************!*\
+  !*** ./src/modules/spoilers.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar spoilers = function spoilers() {\n  var titleAccordeon = document.querySelectorAll('.accordeon .element .title');\n  var elementContent = document.querySelectorAll('.accordeon .element .element-content');\n  var accordeon = document.querySelector('.accordeon');\n  titleAccordeon.forEach(function (blockTitle) {\n    blockTitle.addEventListener('click', function (_ref) {\n      var target = _ref.target;\n      console.log(target);\n      console.log('!');\n      var parent = blockTitle.parentNode;\n      console.log(parent);\n\n      if (parent.classList.contains('active')) {\n        parent.classList.remove('active');\n        item.style.cssText = 'display:none;';\n      } else {\n        elementContent.forEach(function (item) {\n          item.style.cssText = 'display:block;';\n        });\n        parent.classList.add('active');\n      }\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spoilers);\n\n//# sourceURL=webpack://diplom/./src/modules/spoilers.js?");
 
 /***/ }),
 
@@ -455,7 +466,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "1998be5092d33f98ac8d"
+/******/ 		__webpack_require__.h = () => "b28d77bd06f860b93818"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
