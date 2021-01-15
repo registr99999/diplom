@@ -71,7 +71,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar spoilers = function spoilers() {\n  var titleAccordeon = document.querySelectorAll('.accordeon .element .title');\n  var elementContent = document.querySelectorAll('.accordeon .element .element-content');\n  var accordeon = document.querySelector('.accordeon');\n  titleAccordeon.forEach(function (blockTitle) {\n    blockTitle.addEventListener('click', function (_ref) {\n      var target = _ref.target;\n      console.log(target);\n      console.log('!');\n      var parent = blockTitle.parentNode;\n      console.log(parent);\n\n      if (parent.classList.contains('active')) {\n        parent.classList.remove('active');\n        item.style.cssText = 'display:none;';\n      } else {\n        elementContent.forEach(function (item) {\n          item.style.cssText = 'display:block;';\n        });\n        parent.classList.add('active');\n      }\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spoilers);\n\n//# sourceURL=webpack://diplom/./src/modules/spoilers.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar spoilers = function spoilers() {\n  var titleAccordeon = document.querySelectorAll('.accordeon .element .title');\n  var elementAccordeon = document.querySelectorAll('.accordeon .element');\n  titleAccordeon.forEach(function (blockTitle) {\n    blockTitle.addEventListener('click', function (_ref) {\n      var target = _ref.target;\n      var parent = target.parentNode;\n      blockTitle.nextElementSibling.style.display = 'block';\n\n      if (parent.classList.contains('active')) {\n        parent.classList.remove('active');\n        blockTitle.nextElementSibling.style.display = 'none';\n      } else {\n        elementAccordeon.forEach(function (item) {\n          item.classList.remove('active');\n          blockTitle.nextElementSibling.style.display = 'none';\n          item.children[1].style.display = 'none';\n        });\n        parent.classList.add('active');\n        blockTitle.nextElementSibling.style.display = 'block';\n      }\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (spoilers);\n\n//# sourceURL=webpack://diplom/./src/modules/spoilers.js?");
 
 /***/ }),
 
@@ -466,7 +466,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "b28d77bd06f860b93818"
+/******/ 		__webpack_require__.h = () => "09a83342429de933ceca"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

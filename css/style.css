@@ -280,6 +280,8 @@ a.absolute {
 	top: 10px;
 	right: 10px;
 	cursor: pointer;
+	transition: all 0.4s ease-in;
+	visibility: visible;
 }
 .modal-callback {
 	display: none;
@@ -974,7 +976,7 @@ video#video_background {
 	display: none;
 	padding: 20px;
 	font-size: 13px;
-	color: #888885;
+	color: #888885;	
 }
 .accordeon .element {
 	margin-bottom: 6px;
