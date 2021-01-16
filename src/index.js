@@ -4,9 +4,9 @@
     import smoothScroll from "./modules/smoothScroll";
     import spoilers from "./modules/spoilers";
     import sendForm from "./modules/sendForm";
-    
+    import mainSlider from "./modules/mainSlider";
 
-    
+    mainSlider();
     modalCallback();
     smoothScroll();
     spoilers();

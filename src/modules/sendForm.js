@@ -7,7 +7,9 @@ const sendForm = () => {
     const inputName = document.getElementsByName('fio')[0];
     const inputTel = document.getElementsByName('tel')[0];
     const form = document.getElementsByName('form-callback')[0];
-    
+    const callback = document.getElementById('callback');
+    const modalOverlay = document.querySelector('.modal-overlay');
+
     // валидация полей
     inputName.addEventListener('input', () => {
         inputName.value = inputName.value.replace(/[^а-яё\s]/ig, '');
@@ -32,6 +34,7 @@ const sendForm = () => {
 
         }
     })
+    
     const statusMessage = document.createElement('div');
     statusMessage.style.cssText = 'font-size: 2rem;';
      
@@ -50,15 +53,18 @@ const sendForm = () => {
             statusMessage.textContent = successMessage;
         }, (error) => {
             statusMessage.textContent = errorMessage;
-            console.error(error);
         });
         let count = 0;
         const removeMessage = setInterval(() => {
             count++;
-            console.log(count);
+            if (count >= 3) {
+                statusMessage.textContent = successMessage;
+            }
             if (count >= 5) {
                 clearInterval(removeMessage);
                 statusMessage.textContent = '';
+                callback.style.cssText = 'display:none; opacity:0; transform:scale(1) translate(0, 0) rotate(45deg); transition: all .9s ease 3s;';
+                modalOverlay.style.cssText = 'display:none; opacity:0; transform:translate(0, 0) rotate(45deg); transition: all .9s ease 3s;';
             }
         }, 1000);
         form.reset();
