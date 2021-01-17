@@ -15,9 +15,7 @@ const smoothScroll = () => {
             arrowUp.style.cssText = 'display: none;';
         }
     })
-    window.onscroll = () => {
-        
-    }
+
     arrowUp.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
@@ -37,6 +35,8 @@ const smoothScroll = () => {
             const topOffset = document.querySelector('.scrollto').offsetHeight;
             const elementPosition = scrollTarget.getBoundingClientRect().top;
             const offsetPosition = elementPosition - topOffset;
+
+            console.log(offsetPosition);
 
             window.scrollBy({
                 top: offsetPosition,
