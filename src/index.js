@@ -20,7 +20,7 @@ const carousel = new SliderCarousel({
     wrap: '.services-carousel',
     prev: '.arrow-left',
     next: '.arrow-right',
-    slidesToShow: 2,
+    slidesToShow: 3,
     infinity:2,
 });
 
